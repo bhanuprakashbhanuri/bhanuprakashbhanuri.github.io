@@ -1,13 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bhanu Prakash Bhanuri — Cloud Engineer</title>
-  <meta name="description" content="Bhanu Prakash Bhanuri - AWS Cloud Engineer & Developer. Portfolio of cloud projects and skills.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhanu Prakash Bhanuri - Cloud Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0810 0%, #16051a 50%, #0a0810 100%);
+            color: #e6eef8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid rgba(0, 194, 255, 0.2);
+            backdrop-filter: blur(10px);
+            background: rgba(6, 5, 10, 0.8);
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00C2FF, #8A4BFF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        nav a {
+            color: #e6eef8;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 194, 255, 0.3);
+            border-radius: 6px;
+            font-size: 14px;
+            margin-left: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            border-color: #00C2FF;
+            color: #00C2FF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #00C2FF, #8A4BFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00C2FF, #8A4BFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #aaa;
+            margin-bottom: 1.5rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #00C2FF, #00A8E8);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 194, 255, 0.2);
+        }
+
+        .btn-secondary {
+            border: 1px solid #00C2FF;
+            color: #00C2FF;
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 194, 255, 0.1);
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 194, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 194, 255, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 194, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 194, 255, 0.1);
+        }
+
+        .card h3 {
+            color: #00C2FF;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #aaa;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .card li {
+            color: #aaa;
+            padding: 0.25rem 0;
+            padding-left: 1rem;
+        }
+
+        .card li:before {
+            content: "→ ";
+            color: #8A4BFF;
+            margin-right: 0.5rem;
+        }
+
+        footer {
+            border-top: 1px solid rgba(0, 194, 255, 0.2);
+            padding: 2rem 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 194, 255, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: rgba(0, 194, 255, 0.5);
+        }
+
+        .contact-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            color: #00C2FF;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: #00C2FF;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-circle">BP</div>
+                <div class="logo-text">
+                    <h1>Bhanu Prakash Bhanuri</h1>
+                    <p>Cloud Engineer & Developer</p>
+                </div>
+            </div>
+            <nav>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div>
+                <h1>Bhanu Prakash Bhanuri</h1>
+                <p>AWS Cloud Practitioner & Python Developer</p>
+                <p>Building scalable cloud solutions and automation with AWS & Python.</p>
+                <div class="buttons">
+                    <a href="mailto:bhanuprakashbhanuri@gmail.com" class="btn btn-primary">Get In Touch</a>
+                    <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn btn-secondary">View Projects</a>
+                </div>
+                <div class="tags">
+                    <span class="tag">AWS Cloud Practitioner</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Cloud Automation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Go</li>
+                        <li>JavaScript</li>
+                        <li>Bash/Shell</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS S3, CloudFront</li>
+                        <li>Route53, DynamoDB</li>
+                        <li>Lambda, EC2</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git & GitHub</li>
+                        <li>Linux & Windows</li>
+                        <li>VS Code</li>
+                        <li>MATLAB, UiPath</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Resume Ops - AWS Static Resume</h3>
+                    <p>Static resume hosted on S3 + CloudFront. View-tracking API with Go, Docker, and DynamoDB.</p>
+                    <div class="tags">
+                        <span class="tag">AWS S3</span>
+                        <span class="tag">CloudFront</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">DynamoDB</span>
+                    </div>
+                    <a href="#" style="color: #00C2FF; text-decoration: none; font-size: 0.9rem;">View Details →</a>
+                </div>
+                <div class="card">
+                    <h3>IoT Predictive Maintenance</h3>
+                    <p>End-to-end simulated IoT pipeline with data generation, ML model, and real-time dashboard.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                    <a href="#" style="color: #00C2FF; text-decoration: none; font-size: 0.9rem;">View Details →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2>Education & Certifications</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p>Amazon Web Services • 2024</p>
+                    <p style="font-size: 0.9rem;">CLF-C02 Certification</p>
+                </div>
+                <div class="card">
+                    <h3>AWS re/Start Program</h3>
+                    <p>Tech Mahindra SMART Academy • 2024</p>
+                    <p style="font-size: 0.9rem;">Intensive cloud training</p>
+                </div>
+                <div class="card">
+                    <h3>B.Tech Electrical & Electronics</h3>
+                    <p>Vignana Bharathi Institute • 2024</p>
+                    <p style="font-size: 0.9rem;">CGPA: 6.61</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud Application Developer</h3>
+                    <p>NSDC • 2023</p>
+                    <p style="font-size: 0.9rem;">Certification</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">📧</div>
+                    <h3>Email</h3>
+                    <a href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/bhanu-prakash-bhanuri/" target="_blank">View Profile</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">🚀</div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/BhanuPrakashhh3" target="_blank">View Projects</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Bhanu Prakash Bhanuri. All rights reserved.</p>
+    </footer>
 </body>
 </html>
