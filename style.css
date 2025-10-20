@@ -1,5 +1,4 @@
-/* ======== Base Theme ======== */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;500&display=swap');
 
 :root {
   --bg-color: #05060a;
@@ -15,32 +14,32 @@ body {
   font-family: "Poppins", sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* ======== HERO ======== */
+/* === STARFIELD CANVAS === */
+#stars {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 0;
+}
+
+/* === HERO === */
 .hero {
   position: relative;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #0f172a, #030712 80%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png') repeat;
-  opacity: 0.1;
+  z-index: 2;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 10;
+  z-index: 3;
+  animation: fadeIn 2s ease-in;
 }
 
 .hero h1 {
@@ -54,14 +53,8 @@ body {
 
 .hero h2 {
   font-weight: 400;
-  margin-top: 0.5rem;
   color: #9ca3af;
-}
-
-.tagline {
-  color: #cbd5e1;
-  font-size: 1rem;
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .profile-pic {
@@ -69,28 +62,25 @@ body {
   height: 140px;
   border-radius: 50%;
   border: 3px solid var(--neon-blue);
-  box-shadow: 0 0 30px var(--neon-blue);
+  box-shadow: 0 0 35px var(--neon-blue);
   margin-bottom: 1rem;
   animation: pulse 3s infinite alternate;
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 20px var(--neon-blue); }
-  100% { box-shadow: 0 0 35px var(--neon-violet); }
+  0% { box-shadow: 0 0 25px var(--neon-blue); }
+  100% { box-shadow: 0 0 40px var(--neon-violet); }
 }
 
-.cta-buttons {
-  margin-top: 1.5rem;
-}
-
+/* === BUTTONS === */
 .btn {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
+  margin: 0.3rem;
   transition: all 0.3s;
-  margin: 0.2rem;
 }
 
 .btn.primary {
@@ -114,14 +104,11 @@ body {
   color: #fff;
 }
 
-.btn.small {
-  font-size: 0.9rem;
-  padding: 0.4rem 0.8rem;
-}
-
-/* ======== SECTIONS ======== */
+/* === SECTIONS === */
 .section {
   padding: 80px 10%;
+  position: relative;
+  z-index: 2;
 }
 
 .section h2 {
@@ -137,70 +124,35 @@ body {
   backdrop-filter: blur(10px);
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0,191,255,0.05);
-}
-
-/* ======== SKILLS ======== */
-.skills-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.card {
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-}
-
-.card h3 {
-  color: var(--neon-violet);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 0.4rem;
-}
-
-/* ======== PROJECTS ======== */
-.projects-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.project-card {
   padding: 1.5rem;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.05);
-  background: rgba(255,255,255,0.03);
-  transition: all 0.3s;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,191,255,0.15);
-}
-
-.project-card h3 {
-  color: var(--neon-blue);
-}
-
-.project-card .tech {
-  font-size: 0.85rem;
-  color: #9ca3af;
-  margin-top: 0.4rem;
-}
-
-/* ======== EDUCATION ======== */
-.dual {
+/* === PROJECTS & SKILLS === */
+.skills-grid, .projects-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* ======== STRENGTHS ======== */
+.card, .project-card {
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover, .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,191,255,0.2);
+}
+
+/* === STRENGTHS === */
 .strengths {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  list-style: none;
+  padding: 0;
 }
 
 .strengths li {
@@ -211,32 +163,36 @@ body {
   box-shadow: 0 0 15px rgba(0,191,255,0.3);
 }
 
-/* ======== CONTACT ======== */
-#contact p {
-  text-align: center;
-  font-size: 1.1rem;
-}
-
-#contact a {
-  color: var(--neon-blue);
-  text-decoration: none;
-}
-
-#contact a:hover {
-  color: var(--neon-violet);
-}
-
-/* ======== FOOTER ======== */
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 40px 10%;
   color: #64748b;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255,255,255,0.08);
+  z-index: 2;
 }
 
-/* ======== RESPONSIVE ======== */
+/* === FADE ANIMATION === */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.2rem; }
   .section { padding: 60px 6%; }
 }
+
