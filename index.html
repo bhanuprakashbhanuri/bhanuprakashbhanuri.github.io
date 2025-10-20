@@ -4,28 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bhanu Prakash Bhanuri — Cloud & Developer</title>
-  <meta name="description" content="Futuristic Star Wars–inspired portfolio of Bhanu Prakash Bhanuri, AWS Cloud & Python Developer">
+  <meta name="description" content="Star Wars–inspired portfolio of Bhanu Prakash Bhanuri, AWS Cloud & Python Developer">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="profile.png">
+  <link rel="icon" href="profile.jpg">
 </head>
+
 <body>
-  <!-- === HEADER / HERO === -->
+  <!-- === STARFIELD CANVAS === -->
+  <canvas id="stars"></canvas>
+
+  <!-- === HERO === -->
   <header class="hero">
-    <div class="overlay"></div>
     <div class="hero-content">
-      <img src="profile.png" alt="Bhanu Prakash Bhanuri" class="profile-pic">
+      <img src="profile.jpg" alt="Bhanu Prakash Bhanuri" class="profile-pic">
       <h1>Bhanu Prakash Bhanuri</h1>
       <h2>Cloud & Python Developer</h2>
       <p class="tagline">Building in the Cloud • Automating with Python • Empowered by Technology</p>
       <div class="cta-buttons">
-        <a href="resume.pdf" target="_blank" class="btn primary">View Resume</a>
-        <a href="resume.pdf" download class="btn outline">Download Resume</a>
+        <a href="resume1.pdf" target="_blank" class="btn primary">View Resume</a>
+        <a href="resume1.pdf" download class="btn outline">Download Resume</a>
       </div>
     </div>
   </header>
 
   <!-- === ABOUT === -->
-  <section id="about" class="section glass">
+  <section id="about" class="section glass fade">
     <h2>About Me</h2>
     <p>
       Hi! I'm <strong>Bhanu Prakash</strong>, a passionate Cloud & Developer enthusiast focused on AWS and Python.
@@ -35,61 +38,45 @@
   </section>
 
   <!-- === SKILLS === -->
-  <section id="skills" class="section">
+  <section id="skills" class="section fade">
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="card glass">
         <h3>Programming</h3>
-        <ul>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>HTML / CSS</li>
-        </ul>
+        <ul><li>Python</li><li>JavaScript</li><li>HTML / CSS</li></ul>
       </div>
       <div class="card glass">
         <h3>Cloud</h3>
-        <ul>
-          <li>AWS (EC2, S3, Lambda, IAM)</li>
-          <li>DevOps & CI/CD</li>
-          <li>Docker Basics</li>
-        </ul>
+        <ul><li>AWS (EC2, S3, Lambda, IAM)</li><li>DevOps & CI/CD</li><li>Docker Basics</li></ul>
       </div>
       <div class="card glass">
         <h3>Tools</h3>
-        <ul>
-          <li>Git & GitHub</li>
-          <li>VS Code</li>
-          <li>Terraform (Basics)</li>
-        </ul>
+        <ul><li>Git & GitHub</li><li>VS Code</li><li>Terraform (Basics)</li></ul>
       </div>
     </div>
   </section>
 
   <!-- === PROJECTS === -->
-  <section id="projects" class="section glass">
+  <section id="projects" class="section glass fade">
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
         <h3>Simulated IoT Predictive Maintenance</h3>
         <p>IoT pipeline: AWS IoT → Lambda → S3 → Analytics Dashboard.</p>
         <p class="tech">Tech: Python, AWS IoT, Lambda, S3</p>
-        <div class="links">
-          <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">Repo</a>
-        </div>
+        <div class="links"><a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">Repo</a></div>
       </div>
       <div class="project-card">
         <h3>Cloud Automation Scripts</h3>
         <p>Python scripts for provisioning and managing AWS resources automatically.</p>
         <p class="tech">Tech: Python, Boto3, AWS CLI</p>
-        <div class="links">
-          <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">Repo</a>
-        </div>
+        <div class="links"><a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">Repo</a></div>
       </div>
     </div>
   </section>
 
   <!-- === EDUCATION & CERTIFICATES === -->
-  <section id="education" class="section dual">
+  <section id="education" class="section dual fade">
     <div class="card glass">
       <h3>Education</h3>
       <p><strong>B.Tech in Electrical & Electronics Engineering</strong><br>
@@ -106,7 +93,7 @@
   </section>
 
   <!-- === STRENGTHS === -->
-  <section id="strengths" class="section glass">
+  <section id="strengths" class="section glass fade">
     <h2>Strengths</h2>
     <ul class="strengths">
       <li>Quick Learner</li>
@@ -117,7 +104,7 @@
   </section>
 
   <!-- === CONTACT === -->
-  <section id="contact" class="section glass">
+  <section id="contact" class="section glass fade">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a></p>
     <p>LinkedIn: <a href="https://linkedin.com/in/bhanu-prakash-bhanuri" target="_blank">linkedin.com/in/bhanu-prakash-bhanuri</a></p>
@@ -127,7 +114,10 @@
   <footer>
     <p>© 2025 Bhanu Prakash Bhanuri ⚡</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
