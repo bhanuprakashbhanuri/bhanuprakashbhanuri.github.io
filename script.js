@@ -1,52 +1,45 @@
-// === STARFIELD BACKGROUND ===
-const canvas = document.getElementById('stars');
-const ctx = canvas.getContext('2d');
+// === Minecraft pixel particle background ===
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
 
-let stars = [];
-const numStars = 180;
-
+let particles = [];
+const colors = ["#3aa655", "#c8f560", "#5c4033"];
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  stars = Array.from({ length: numStars }, () => ({
+  particles = Array.from({ length: 100 }, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    z: Math.random() * canvas.width
+    size: Math.random() * 3 + 1,
+    color: colors[Math.floor(Math.random() * colors.length)],
+    speedY: Math.random() * 1 + 0.5
   }));
 }
-window.addEventListener('resize', resize);
+window.addEventListener("resize", resize);
 resize();
 
 function animate() {
-  ctx.fillStyle = 'rgba(5,6,10,0.6)';
+  ctx.fillStyle = "rgba(27,27,27,0.5)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  for (let star of stars) {
-    star.z -= 2;
-    if (star.z <= 0) star.z = canvas.width;
-    const k = 128.0 / star.z;
-    const px = star.x * k + canvas.width / 2;
-    const py = star.y * k + canvas.height / 2;
-    if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
-      const size = (1 - star.z / canvas.width) * 2;
-      ctx.fillStyle = `rgba(0,191,255,${1 - star.z / canvas.width})`;
-      ctx.beginPath();
-      ctx.arc(px, py, size, 0, Math.PI * 2);
-      ctx.fill();
-    }
+  for (let p of particles) {
+    ctx.fillStyle = p.color;
+    ctx.fillRect(p.x, p.y, p.size, p.size);
+    p.y += p.speedY;
+    if (p.y > canvas.height) p.y = 0;
   }
   requestAnimationFrame(animate);
 }
 animate();
 
-// === FADE ANIMATION ON SCROLL ===
-const faders = document.querySelectorAll('.fade');
+// === Fade on Scroll ===
+const faders = document.querySelectorAll(".section");
 function onScroll() {
   const trigger = window.innerHeight * 0.85;
-  faders.forEach(fade => {
-    const rect = fade.getBoundingClientRect();
-    if (rect.top < trigger) fade.classList.add('visible');
+  faders.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top < trigger) sec.classList.add("visible");
   });
 }
-window.addEventListener('scroll', onScroll);
+window.addEventListener("scroll", onScroll);
 onScroll();
+
