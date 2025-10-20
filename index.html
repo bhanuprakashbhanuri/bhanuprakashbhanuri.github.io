@@ -1,201 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bhanu Prakash Bhanuri — Cloud & Developer</title>
-  <meta name="description" content="Bhanu Prakash Bhanuri — AWS Cloud Practitioner, Python, Cloud Automation." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Bhanu Prakash Bhanuri — Cloud & Developer" />
-  <meta property="og:description" content="AWS Cloud Practitioner • Cloud automation & Python • Resume & projects" />
-  <meta property="og:image" content="static/img/og-image-placeholder.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Tailwind CDN (quick paste). For production build, replace with built Tailwind. -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    :root{
-      --bg:#06070b;
-      --glass: rgba(255,255,255,0.03);
-      --accent1: #0ea5e9; /* neon blue */
-      --accent2: #7c3aed; /* violet */
-      --muted: #9ca3af;
-    }
-    html,body{background:var(--bg); color:#e6eef8; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-    .glass{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); backdrop-filter: blur(8px) saturate(120%); }
-    .neon{ background: linear-gradient(90deg,var(--accent1),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .btn-primary{ padding:.5rem .9rem; border-radius:.6rem; background:linear-gradient(90deg,var(--accent1),var(--accent2)); color:#041027; font-weight:600; box-shadow:0 8px 30px rgba(124,58,237,0.12); }
-    .btn-ghost{ padding:.45rem .7rem; border-radius:.5rem; border:1px solid rgba(148,163,184,0.06); background:transparent; color:var(--muted); }
-    .btn-outline{ padding:.45rem .7rem; border-radius:.5rem; border:1px solid rgba(124,58,237,0.22); background:transparent; color:#dbeafe; }
-    a { color: #9be7ff; }
-    .focus-ring:focus{ outline:3px solid rgba(14,165,233,0.14); outline-offset:3px; }
-    .shadow-glow{ box-shadow: 0 8px 30px rgba(14,165,233,0.06), 0 0 36px rgba(124,58,237,0.04); }
-    .section-title{ font-weight:700; color:#cbd5e1; letter-spacing:0.2px; }
-    img{ max-width:100%; height:auto; display:block; }
-    /* small responsive tweaks */
-    @media (min-width:768px){ .hero-grid{ display:grid; grid-template-columns: 2fr 1fr; gap:1.25rem; align-items:center; } }
-  </style>
+  <meta name="description" content="Futuristic Star Wars–inspired portfolio of Bhanu Prakash Bhanuri, AWS Cloud & Python Developer">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="profile.png">
 </head>
-<body class="antialiased">
+<body>
+  <!-- === HEADER / HERO === -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="profile.png" alt="Bhanu Prakash Bhanuri" class="profile-pic">
+      <h1>Bhanu Prakash Bhanuri</h1>
+      <h2>Cloud & Python Developer</h2>
+      <p class="tagline">Building in the Cloud • Automating with Python • Empowered by Technology</p>
+      <div class="cta-buttons">
+        <a href="resume.pdf" target="_blank" class="btn primary">View Resume</a>
+        <a href="resume.pdf" download class="btn outline">Download Resume</a>
+      </div>
+    </div>
+  </header>
 
-  <div class="max-w-6xl mx-auto p-6">
+  <!-- === ABOUT === -->
+  <section id="about" class="section glass">
+    <h2>About Me</h2>
+    <p>
+      Hi! I'm <strong>Bhanu Prakash</strong>, a passionate Cloud & Developer enthusiast focused on AWS and Python.
+      I love automating tasks, deploying scalable cloud solutions, and exploring futuristic technologies.
+      My goal is to design systems that are simple, reliable, and efficient.
+    </p>
+  </section>
 
-    <!-- Header / Nav -->
-    <header class="flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-12 h-12 rounded-full shadow-glow flex items-center justify-center" aria-hidden="true" style="background:linear-gradient(90deg,var(--accent1),var(--accent2));">
-          <span style="color:#031124; font-weight:800;">BP</span>
-        </div>
-        <div>
-          <div class="text-lg font-semibold">Bhanu Prakash Bhanuri</div>
-          <div class="text-xs text-slate-400">AWS Cloud Practitioner • Python • Cloud Automation</div>
+  <!-- === SKILLS === -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="card glass">
+        <h3>Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="card glass">
+        <h3>Cloud</h3>
+        <ul>
+          <li>AWS (EC2, S3, Lambda, IAM)</li>
+          <li>DevOps & CI/CD</li>
+          <li>Docker Basics</li>
+        </ul>
+      </div>
+      <div class="card glass">
+        <h3>Tools</h3>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>VS Code</li>
+          <li>Terraform (Basics)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- === PROJECTS === -->
+  <section id="projects" class="section glass">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Simulated IoT Predictive Maintenance</h3>
+        <p>IoT pipeline: AWS IoT → Lambda → S3 → Analytics Dashboard.</p>
+        <p class="tech">Tech: Python, AWS IoT, Lambda, S3</p>
+        <div class="links">
+          <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">Repo</a>
         </div>
       </div>
-
-      <nav class="flex items-center gap-3">
-        <a class="btn-ghost focus-ring" href="#projects">Projects</a>
-        <a class="btn-ghost focus-ring" href="#contact">Contact</a>
-        <!-- View / Download Resume -->
-        <a class="btn-primary ml-2" href="./resume.pdf" target="_blank" rel="noopener">View Resume</a>
-        <a class="btn-outline ml-1" href="/download-resume" role="link">Download</a>
-      </nav>
-    </header>
-
-    <!-- HERO -->
-    <main class="mt-8">
-      <section class="glass p-6 rounded-2xl hero-grid">
-        <div>
-          <h1 class="text-3xl md:text-4xl font-extrabold leading-tight neon">May the Cloud be with you — Bhanu Prakash Bhanuri</h1>
-          <p class="mt-3 text-slate-300">AWS Cloud Practitioner • Python • DevOps-minded cloud automation engineer. I build dependable, scalable systems and automation for cloud workflows.</p>
-
-          <div class="mt-5 flex gap-3">
-            <a class="btn-primary" href="./resume.pdf" target="_blank" rel="noopener">View Resume</a>
-            <a class="btn-outline" href="/download-resume">Download Resume</a>
-            <a class="btn-ghost" href="#projects">See Projects</a>
-          </div>
-
-          <!-- Quick contact row using resume data (auto-populated below by data.json) -->
-          <div id="quick-contact" class="mt-4 text-sm text-slate-400"></div>
+      <div class="project-card">
+        <h3>Cloud Automation Scripts</h3>
+        <p>Python scripts for provisioning and managing AWS resources automatically.</p>
+        <p class="tech">Tech: Python, Boto3, AWS CLI</p>
+        <div class="links">
+          <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">Repo</a>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <aside class="flex justify-end items-center">
-          <div class="w-40 text-center">
-            <img src="static/img/profile-placeholder.png" alt="Profile placeholder" class="rounded-full ring-2 ring-slate-800/30" width="160" height="160">
-            <div class="mt-2 text-sm text-slate-300">AWS Cloud Practitioner</div>
-          </div>
-        </aside>
-      </section>
+  <!-- === EDUCATION & CERTIFICATES === -->
+  <section id="education" class="section dual">
+    <div class="card glass">
+      <h3>Education</h3>
+      <p><strong>B.Tech in Electrical & Electronics Engineering</strong><br>
+      Vignana Bharathi Institute of Technology, 2020–2024</p>
+    </div>
+    <div class="card glass">
+      <h3>Certificates & Achievements</h3>
+      <ul>
+        <li>AWS Cloud Practitioner — AWS re/Start</li>
+        <li>AICTE Virtual Internship — AWS AI-ML</li>
+        <li>Cloud Application Developer (NSDC)</li>
+      </ul>
+    </div>
+  </section>
 
-      <!-- About -->
-      <section id="about" class="mt-8">
-        <div class="glass p-5 rounded-xl">
-          <h2 class="section-title">About</h2>
-          <p class="mt-2 text-slate-300">
-            As stated in my resume: I want to start my career in Cloud Computing and use my knowledge of AWS and IT tools to deliver reliable cloud solutions.
-            I enjoy learning fast, building automation scripts, and practicing cloud best-practices.
-          </p>
-        </div>
-      </section>
+  <!-- === STRENGTHS === -->
+  <section id="strengths" class="section glass">
+    <h2>Strengths</h2>
+    <ul class="strengths">
+      <li>Quick Learner</li>
+      <li>Team Collaboration</li>
+      <li>Problem Solving</li>
+      <li>Adaptability</li>
+    </ul>
+  </section>
 
-      <!-- Skills -->
-      <section id="skills" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="glass p-4 rounded-lg">
-          <h3 class="font-semibold">Programming</h3>
-          <ul class="mt-2 text-sm text-slate-300"><li>Python</li><li>MATLAB (familiar)</li></ul>
-        </div>
-        <div class="glass p-4 rounded-lg">
-          <h3 class="font-semibold">Cloud</h3>
-          <ul class="mt-2 text-sm text-slate-300"><li>AWS (Cloud Practitioner skills)</li><li>Cloud Automation & CI/CD basics</li></ul>
-        </div>
-        <div class="glass p-4 rounded-lg">
-          <h3 class="font-semibold">Tools</h3>
-          <ul class="mt-2 text-sm text-slate-300"><li>UiPath Studio</li><li>Git & GitHub</li><li>MS Office</li></ul>
-        </div>
-      </section>
+  <!-- === CONTACT === -->
+  <section id="contact" class="section glass">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/bhanu-prakash-bhanuri" target="_blank">linkedin.com/in/bhanu-prakash-bhanuri</a></p>
+    <p>GitHub: <a href="https://github.com/BhanuPrakashhh3" target="_blank">github.com/BhanuPrakashhh3</a></p>
+  </section>
 
-      <!-- Projects -->
-      <section id="projects" class="mt-8">
-        <h2 class="section-title">Projects</h2>
-        <div id="projects-grid" class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
-      </section>
-
-      <!-- Education / Achievements -->
-      <section class="mt-8 grid md:grid-cols-2 gap-4">
-        <div class="glass p-4 rounded-lg">
-          <h3 class="font-semibold">Education</h3>
-          <p class="mt-2 text-slate-300">B.Tech in Electrical & Electronics Engineering — 2020 - 2024 (CGPA: 6.61)</p>
-        </div>
-        <div class="glass p-4 rounded-lg">
-          <h3 class="font-semibold">Certifications & Achievements</h3>
-          <ul class="mt-2 text-slate-300 text-sm">
-            <li>AWS Cloud Practitioner (CLF-C02)</li>
-            <li>AWS re/Start certificate — Tech Mahindra SMART Academy</li>
-            <li>Cloud Application Developer — NSDC</li>
-            <li>AI-ML & Cybersecurity virtual internships (AICTE & AWS)</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Strengths -->
-      <section class="mt-8">
-        <div class="glass p-4 rounded-lg">
-          <h3 class="font-semibold">Strengths</h3>
-          <ul class="mt-2 text-slate-300"><li>Honesty</li><li>Punctuality</li><li>Good communication & teamwork</li></ul>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="mt-8">
-        <div class="glass p-6 rounded-lg">
-          <h3 class="section-title">Contact</h3>
-          <p class="mt-2 text-slate-300">Email: <a id="email-link" href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a></p>
-          <p class="mt-1 text-slate-300">LinkedIn: <a id="linkedin-link" href="https://www.linkedin.com/in/bhanu-prakash-bhanuri/" target="_blank">linkedin.com/in/bhanu-prakash-bhanuri</a></p>
-          <p class="mt-1 text-slate-300">GitHub: <a id="github-link" href="https://github.com/BhanuPrakashhh3" target="_blank">github.com/BhanuPrakashhh3</a></p>
-        </div>
-      </section>
-
-      <footer class="mt-8 text-center text-sm text-slate-500">© Bhanu Prakash Bhanuri • Star Wars–inspired cloud portfolio</footer>
-    </main>
-  </div>
-
-  <script>
-    /* Load data.json to populate projects and quick contact.
-       data.json should be in the repo root. */
-    fetch('/data.json').then(r => r.json()).then(data => {
-      // quick contact
-      const qc = document.getElementById('quick-contact');
-      qc.innerHTML = `<strong>${data.name}</strong> • ${data.title} • <a href="mailto:${data.email}">${data.email}</a>`;
-
-      // contact links (safety: only set if present)
-      if (data.linkedin) document.getElementById('linkedin-link').setAttribute('href', data.linkedin);
-      if (data.github) document.getElementById('github-link').setAttribute('href', data.github);
-      if (data.email) document.getElementById('email-link').setAttribute('href', 'mailto:'+data.email);
-
-      // projects
-      const grid = document.getElementById('projects-grid');
-      if (Array.isArray(data.projects)) {
-        data.projects.forEach(p => {
-          const card = document.createElement('article');
-          card.className = 'glass p-4 rounded-lg';
-          card.innerHTML = `
-            <h4 class="font-semibold">${p.title}</h4>
-            <p class="text-sm mt-2 text-slate-300">${p.description}</p>
-            <p class="text-xs mt-3 text-slate-400">Tech: ${p.tech.join(', ')}</p>
-            <div class="mt-3 flex gap-2">
-              ${p.live ? `<a class="btn-ghost" href="${p.live}" target="_blank">Live</a>` : ''}
-              ${p.repo ? `<a class="btn-outline" href="${p.repo}" target="_blank">Repo</a>` : ''}
-            </div>
-          `;
-          grid.appendChild(card);
-        });
-      }
-    }).catch(err => {
-      console.error('Failed to load data.json', err);
-    });
-  </script>
-
+  <footer>
+    <p>© 2025 Bhanu Prakash Bhanuri ⚡</p>
+  </footer>
 </body>
 </html>
+
 
