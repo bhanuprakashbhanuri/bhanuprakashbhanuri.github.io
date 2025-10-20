@@ -1,91 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bhanu Prakash Bhanuri — Developer Portfolio</title>
-  <meta name="description" content="Minecraft-themed portfolio of Bhanu Prakash Bhanuri, AWS Cloud & Python Developer" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="profile.jpg" />
-  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bhanu Prakash Bhanuri — Cloud & Developer</title>
+  <meta name="description" content="Bhanu Prakash Bhanuri — AWS Cloud & Python Developer. Professional portfolio." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="profile.jpg">
 </head>
-
 <body>
-  <canvas id="bg"></canvas>
+  <div class="page">
 
-  <header class="header">
-    <div class="avatar">
-      <img src="profile.jpg" alt="Bhanu Prakash Bhanuri" />
-    </div>
-    <h1>Bhanu Prakash Bhanuri</h1>
-    <h2>Cloud & Python Developer</h2>
-    <p class="tag">Building awesome things — block by block 🟩</p>
-    <div class="buttons">
-      <a href="resume1.pdf" target="_blank" class="btn primary">📄 View Resume</a>
-      <a href="resume1.pdf" download class="btn outline">⬇ Download Resume</a>
-    </div>
-  </header>
+    <!-- NAV -->
+    <header class="nav" role="banner">
+      <div class="nav-left">
+        <img src="profile.jpg" alt="Bhanu Prakash profile" class="nav-avatar">
+        <div class="brand">
+          <div class="name">Bhanu Prakash</div>
+          <div class="role">Cloud & Developer</div>
+        </div>
+      </div>
+      <nav class="nav-right" role="navigation" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link cta" id="view-resume" target="_blank" rel="noopener" href="resume1.pdf">View Resume</a>
+        <a href="resume1.pdf" download class="nav-link btn-ghost">Download</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="section glass">
-      <h2>About Me</h2>
-      <p>
-        I'm <strong>Bhanu</strong>, a passionate Cloud & Python Developer who loves crafting reliable
-        solutions with AWS and automation tools. I enjoy experimenting with tech just like building worlds in Minecraft.
-      </p>
-    </section>
-
-    <section class="section glass">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="card"><h3>Programming</h3><ul><li>Python</li><li>JavaScript</li><li>HTML/CSS</li></ul></div>
-        <div class="card"><h3>Cloud</h3><ul><li>AWS (EC2, S3, Lambda)</li><li>DevOps Basics</li><li>Docker</li></ul></div>
-        <div class="card"><h3>Tools</h3><ul><li>Git & GitHub</li><li>VS Code</li><li>Terraform (Basic)</li></ul></div>
+    <!-- HERO -->
+    <section class="hero" id="home" role="region" aria-label="Introduction">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">Bhanu Prakash <span class="accent">Bhanuri</span></h1>
+          <p class="hero-sub">AWS-focused Cloud & Developer • Python automation • Reliable, scalable systems</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="resume1.pdf" target="_blank" rel="noopener">View Resume</a>
+            <a class="btn outline" href="resume1.pdf" download>Download</a>
+          </div>
+          <ul class="quick-info">
+            <li><strong>Email:</strong> <a href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a></li>
+            <li><strong>Location:</strong> India</li>
+          </ul>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="profile-frame">
+            <img src="profile.jpg" alt="" class="profile-lg">
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section glass">
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>IoT Predictive Maintenance</h3>
-          <p>IoT data pipeline using AWS IoT, Lambda & S3 for predictive analytics.</p>
-          <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">🔗 GitHub</a>
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-title">About</h2>
+      <div class="card">
+        <p>
+          I’m <strong>Bhanu Prakash Bhanuri</strong>, a cloud-focused developer with practical AWS skills, Python automation experience,
+          and a systems-first approach. I build production-minded solutions that prioritize reliability, maintainability and cost-efficiency.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section" aria-labelledby="skills-heading">
+      <h2 id="skills-heading" class="section-title">Skills</h2>
+      <div class="grid-3">
+        <div class="skill card">
+          <h3>Programming</h3>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript (ES6+)</li>
+            <li>HTML & CSS</li>
+          </ul>
         </div>
-        <div class="card">
+        <div class="skill card">
+          <h3>Cloud</h3>
+          <ul>
+            <li>AWS: S3, Lambda, EC2, IAM</li>
+            <li>Infrastructure as Code (CloudFormation basics)</li>
+            <li>CI/CD & DevOps practices</li>
+          </ul>
+        </div>
+        <div class="skill card">
+          <h3>Tools</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>Docker</li>
+            <li>VS Code</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <article class="project card">
+          <h3>Simulated IoT Predictive Maintenance</h3>
+          <p class="muted">End-to-end simulated IoT pipeline: device data → AWS IoT → Lambda → S3 → analysis.</p>
+          <p class="project-meta"><strong>Tech:</strong> Python, AWS IoT, Lambda, S3</p>
+          <p class="project-links">
+            <a class="link" href="https://github.com/BhanuPrakashhh3" target="_blank" rel="noopener">Repo</a>
+          </p>
+        </article>
+
+        <article class="project card">
           <h3>Cloud Automation Scripts</h3>
-          <p>Python scripts for AWS automation — provisioning & monitoring.</p>
-          <a href="https://github.com/BhanuPrakashhh3" target="_blank" class="btn small">🔗 GitHub</a>
+          <p class="muted">Reusable Python scripts for AWS provisioning & automation (Boto3 & scripts).</p>
+          <p class="project-meta"><strong>Tech:</strong> Python, Boto3, AWS CLI</p>
+          <p class="project-links">
+            <a class="link" href="https://github.com/BhanuPrakashhh3" target="_blank" rel="noopener">Repo</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATES -->
+    <section class="section dual" aria-labelledby="edu-heading">
+      <div>
+        <h2 id="edu-heading" class="section-title">Education</h2>
+        <div class="card">
+          <p><strong>B.Tech — Electrical & Electronics Engineering</strong><br>
+          Vignana Bharathi Institute of Technology (2020–2024)</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="section-title">Certificates & Achievements</h2>
+        <div class="card">
+          <ul>
+            <li>AWS Cloud Practitioner (CLF-C02)</li>
+            <li>AWS re/Start — Tech Mahindra SMART Academy</li>
+            <li>Cloud Application Developer — NSDC</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section glass">
-      <h2>Education</h2>
-      <p><strong>B.Tech in Electrical & Electronics Engineering</strong><br>Vignana Bharathi Institute of Technology (2020–2024)</p>
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <h2 id="contact-heading" class="section-title">Contact</h2>
+      <div class="card contact-card">
+        <p><strong>Email:</strong> <a href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/bhanu-prakash-bhanuri" target="_blank" rel="noopener">linkedin.com/in/bhanu-prakash-bhanuri</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/BhanuPrakashhh3" target="_blank" rel="noopener">github.com/BhanuPrakashhh3</a></p>
+      </div>
     </section>
 
-    <section class="section glass">
-      <h2>Certificates</h2>
-      <ul>
-        <li>AWS Cloud Practitioner — AWS re/Start</li>
-        <li>Cloud Application Developer — NSDC</li>
-        <li>AI-ML Virtual Internship — AICTE</li>
-      </ul>
-    </section>
+    <footer class="footer" role="contentinfo">
+      <div>© 2025 Bhanu Prakash Bhanuri — Cloud & Developer</div>
+    </footer>
+  </div>
 
-    <section class="section glass">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:bhanuprakashbhanuri@gmail.com">bhanuprakashbhanuri@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/bhanu-prakash-bhanuri" target="_blank">linkedin.com/in/bhanu-prakash-bhanuri</a></p>
-      <p>GitHub: <a href="https://github.com/BhanuPrakashhh3" target="_blank">github.com/BhanuPrakashhh3</a></p>
-    </section>
-  </main>
-
-  <footer>© 2025 Bhanu Prakash Bhanuri — Crafted with ♥ and pixels</footer>
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
