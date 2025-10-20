@@ -1,45 +1,47 @@
-// === Minecraft pixel particle background ===
-const canvas = document.getElementById("bg");
-const ctx = canvas.getContext("2d");
+// Subtle script: reveal-on-scroll + small prefers-reduced-motion support
+(function () {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-let particles = [];
-const colors = ["#3aa655", "#c8f560", "#5c4033"];
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  particles = Array.from({ length: 100 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    size: Math.random() * 3 + 1,
-    color: colors[Math.floor(Math.random() * colors.length)],
-    speedY: Math.random() * 1 + 0.5
-  }));
-}
-window.addEventListener("resize", resize);
-resize();
-
-function animate() {
-  ctx.fillStyle = "rgba(27,27,27,0.5)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  for (let p of particles) {
-    ctx.fillStyle = p.color;
-    ctx.fillRect(p.x, p.y, p.size, p.size);
-    p.y += p.speedY;
-    if (p.y > canvas.height) p.y = 0;
+  // reveal elements with [data-animate]
+  function revealOnScroll() {
+    const items = document.querySelectorAll('[data-animate]');
+    const trigger = window.innerHeight * 0.85;
+    items.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < trigger) el.classList.add('show');
+    });
   }
-  requestAnimationFrame(animate);
-}
-animate();
 
-// === Fade on Scroll ===
-const faders = document.querySelectorAll(".section");
-function onScroll() {
-  const trigger = window.innerHeight * 0.85;
-  faders.forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    if (rect.top < trigger) sec.classList.add("visible");
+  // Add data-animate to major elements for subtle entrance
+  const toAnimate = [
+    document.querySelector('.hero'),
+    document.querySelector('#about .card'),
+    document.querySelector('#skills .grid-3'),
+    document.querySelector('#projects .projects-grid'),
+    document.querySelector('#contact .card')
+  ];
+  toAnimate.forEach(el => { if (el) el.setAttribute('data-animate', ''); });
+
+  if (!prefersReduced) {
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('resize', revealOnScroll);
+    document.addEventListener('DOMContentLoaded', () => { revealOnScroll(); setTimeout(revealOnScroll, 300); });
+  } else {
+    // if user prefers reduced motion, show everything immediately
+    document.querySelectorAll('[data-animate]').forEach(el => el.classList.add('show'));
+  }
+
+  // Smooth scrolling for nav links
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
   });
-}
-window.addEventListener("scroll", onScroll);
-onScroll();
+})();
+
 
