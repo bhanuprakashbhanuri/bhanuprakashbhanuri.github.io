@@ -1,166 +1,95 @@
-@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+/* PROFESSIONAL DEVELOPER THEME
+   Dark background, elegant green accent, high readability, subtle glow & accessibility.
+   Uses system fonts for fast load; no external fonts required.
+*/
 
-:root {
-  --bg: #1b1b1b;
-  --green: #3aa655;
-  --brown: #5c4033;
-  --light: #d7e0d1;
-  --shadow: rgba(0,0,0,0.3);
+:root{
+  --bg: #0b0f11;             /* very dark */
+  --panel: #0f1720;          /* panels */
+  --muted: #9aa6ad;          /* secondary text */
+  --text: #e6f0f2;           /* main text */
+  --accent: #19a974;         /* refined green accent */
+  --accent-2: #0f8f63;
+  --glass: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.04);
+  --focus: rgba(25,169,116,0.18);
+  --radius: 12px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body {
-  height: 100%;
-  background: var(--bg);
-  font-family: 'Minecraft', sans-serif;
-  color: var(--light);
-  overflow-x: hidden;
+/* reset */
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; background:var(--bg); color:var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased}
+
+/* page container */
+.page{max-width:1100px; margin:0 auto; padding:20px}
+
+/* NAV */
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 4px}
+.nav-left{display:flex; align-items:center; gap:12px}
+.nav-avatar{width:48px; height:48px; border-radius:8px; object-fit:cover; border:2px solid rgba(255,255,255,0.04); box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.brand .name{font-weight:700; font-size:1rem}
+.brand .role{font-size:0.78rem; color:var(--muted)}
+.nav-right{display:flex; align-items:center; gap:10px}
+.nav-link{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:8px; font-size:0.95rem}
+.nav-link:hover, .nav-link:focus{color:var(--text); background:rgba(255,255,255,0.02); outline:none}
+.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#02140f; font-weight:600; box-shadow:0 8px 24px rgba(25,169,116,0.12)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.04); padding:6px 10px}
+
+/* HERO */
+.hero{display:flex; align-items:center; gap:24px; padding:36px 6px; margin-top:8px}
+.hero-inner{display:flex; gap:28px; align-items:center; width:100%}
+.hero-left{flex:1}
+.hero-right{width:220px; display:flex; align-items:center; justify-content:center}
+.profile-frame{width:220px; height:220px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12)); padding:10px; border:1px solid var(--glass-border); box-shadow: 0 30px 80px rgba(5,10,10,0.6)}
+.profile-lg{width:100%; height:100%; border-radius:12px; object-fit:cover; display:block}
+.hero-title{font-size:2rem; margin:0 0 6px 0; font-weight:700}
+.accent{background:linear-gradient(90deg,var(--accent),var(--accent-2)); -webkit-background-clip:text; color:transparent}
+.hero-sub{color:var(--muted); margin:6px 0 12px 0; max-width:60%}
+.hero-ctas{display:flex; gap:10px; margin:12px 0}
+.btn{padding:10px 14px; border-radius:10px; text-decoration:none; color:var(--text); display:inline-block}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#02140f; font-weight:700; box-shadow:0 14px 40px rgba(25,169,116,0.12)}
+.btn.outline{border:1px solid rgba(255,255,255,0.04); background:transparent}
+
+/* quick info */
+.quick-info{list-style:none; padding:0; margin-top:10px; color:var(--muted); font-size:0.95rem}
+.quick-info li{margin:6px 0}
+
+/* SECTION */
+.section{margin-top:26px}
+.section-title{font-size:1.05rem; margin-bottom:12px; color:var(--accent)}
+.card{background:var(--panel); padding:18px; border-radius:14px; border:1px solid var(--glass-border); box-shadow: 0 8px 30px rgba(2,6,8,0.6)}
+
+/* GRID */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.projects-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+.project .muted, .project .project-meta{color:var(--muted); font-size:0.95rem}
+.project-links .link{color:var(--accent); text-decoration:none}
+
+/* DUAL */
+.dual{display:grid; grid-template-columns:repeat(2,1fr); gap:14px}
+
+/* CONTACT */
+.contact-card p{margin:8px 0; color:var(--muted)}
+
+/* FOOTER */
+.footer{text-align:center; margin:40px 0 20px; color:var(--muted); font-size:0.95rem}
+
+/* small screens */
+@media (max-width:880px){
+  .hero-inner{flex-direction:column-reverse; align-items:center}
+  .hero-sub{max-width:100%}
+  .grid-3{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .dual{grid-template-columns:1fr}
+  .hero-right{width:180px}
 }
 
-/* === Background Canvas === */
-#bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at bottom, #1b1b1b 10%, #0d0d0d 80%);
-}
+/* focus styles for accessibility */
+a:focus, button:focus { box-shadow: 0 0 0 4px var(--focus); border-radius:8px; outline:none; }
 
-/* === Header / Hero === */
-.header {
-  text-align: center;
-  padding: 60px 10%;
-  background: linear-gradient(to bottom, #3aa655, #5c4033);
-  border-bottom: 4px solid #2d2419;
-  color: #fff;
-  box-shadow: 0 6px 25px var(--shadow);
-}
+/* subtle entrance animations */
+[data-animate] { opacity:0; transform: translateY(12px); transition: all 600ms cubic-bezier(.2,.9,.3,1); }
+[data-animate].show { opacity:1; transform: translateY(0); }
 
-.header img {
-  width: 140px;
-  height: 140px;
-  border-radius: 4px;
-  border: 4px solid #2d2419;
-  box-shadow: 0 0 30px rgba(0,0,0,0.4);
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  margin-top: 1rem;
-  text-shadow: 2px 2px #2d2419;
-}
-
-.header h2 {
-  font-size: 1.2rem;
-  color: #f3f3f3;
-}
-
-.tag {
-  color: #cfcfcf;
-  margin-top: 0.5rem;
-}
-
-.buttons {
-  margin-top: 1.2rem;
-}
-
-.btn {
-  display: inline-block;
-  margin: 0.3rem;
-  padding: 0.6rem 1rem;
-  text-decoration: none;
-  font-size: 1rem;
-  border: 3px solid #2d2419;
-  border-radius: 3px;
-  background: #c8f560;
-  color: #2d2419;
-  box-shadow: 2px 2px 0 #2d2419;
-  transition: all 0.2s;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 4px 4px 0 #2d2419;
-}
-
-.btn.outline {
-  background: #5c4033;
-  color: #fff;
-}
-
-/* === Sections === */
-.section {
-  padding: 60px 10%;
-  background: rgba(255,255,255,0.05);
-  border-top: 4px solid #2d2419;
-  box-shadow: inset 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.section h2 {
-  color: #c8f560;
-  text-shadow: 2px 2px #2d2419;
-  margin-bottom: 1rem;
-}
-
-.glass {
-  background: rgba(90, 90, 90, 0.1);
-  border: 2px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-}
-
-.skills, .projects {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.card {
-  background: #2d2419;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 3px solid #1b1b1b;
-  box-shadow: 3px 3px 0 #0a0a0a;
-}
-
-.card h3 {
-  color: #c8f560;
-  margin-bottom: 0.5rem;
-}
-
-.card p, .card li {
-  color: #f3f3f3;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-ul { list-style-type: square; margin-left: 1.5rem; }
-
-/* === Footer === */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #2d2419;
-  border-top: 4px solid #0d0d0d;
-  font-size: 0.9rem;
-  color: #c8f560;
-}
-
-/* === Animations === */
-.fade {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-
-.fade.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .header h1 { font-size: 2rem; }
-  .section { padding: 40px 6%; }
-}
 
 
