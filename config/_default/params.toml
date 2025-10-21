@@ -1,9 +1,0 @@
-# Blowfish theme parameters
-colorScheme = "default"  # you may change
-defaultTheme = "dark"
-disableImageOptimization = false
-[#homepage]
-  [homepage]
-    layout = "background"
-    showRecent = true
-    showRecentItems = 4
