@@ -1,0 +1,50 @@
+name: CI — Build & Save Logs
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Show repo files (quick)
+        run: ls -la
+
+      - name: Show package.json
+        run: cat package.json || true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies (fast)
+        run: npm ci
+        env:
+          CI: true
+
+      - name: Run build and save full log
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p build-logs
+          # run build and capture stdout+stderr to build.log (exit code preserved)
+          npm run build 2>&1 | tee build-logs/build.log
+          echo "BUILD_EXIT_CODE=$?" > build-logs/exitcode.txt
+        continue-on-error: true
+
+      - name: Show the last 200 lines (Actions log preview)
+        if: always()
+        run: tail -n 200 build-logs/build.log || true
+
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: build-logs
