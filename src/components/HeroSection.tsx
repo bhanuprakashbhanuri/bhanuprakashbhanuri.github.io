@@ -1,6 +1,5 @@
 import { ArrowDown, Download, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import profileImage from '@/assets/profile-hero.jpg';
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -13,18 +12,11 @@ const HeroSection = () => {
       
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="flex flex-col items-center text-center space-y-8 animate-fade-up">
-          {/* Profile Image */}
+          {/* Profile Image - Using placeholder */}
           <div className="relative w-48 h-48 md:w-56 md:h-56 group">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl blur-xl animate-pulse" />
-            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/30 glow-primary animate-cinematic-reveal">
-              <img 
-                src={profileImage} 
-                alt="Bhanu Prakash Bhanuri" 
-                className="w-full h-full object-cover"
-                style={{ imageRendering: 'auto' }}
-                loading="eager"
-                decoding="sync"
-              />
+            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/30 glow-primary animate-cinematic-reveal bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+              <div className="text-6xl font-bold text-primary">BP</div>
             </div>
           </div>
           
